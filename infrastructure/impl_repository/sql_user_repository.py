@@ -17,3 +17,12 @@ class SQLModelUserRepository(UserRepository):
             session.commit()
             session.refresh(user)
             return user
+        
+    def get(self, user_id: int) -> Optional[User]:
+        with database.get_session() as session:
+            return session.get(User, user_id) 
+    
+    def get_all(self) -> list[User]:
+        with database.get_session() as session:
+            return session.exec(select(User)).all()
+        

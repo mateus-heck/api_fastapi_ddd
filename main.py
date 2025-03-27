@@ -52,7 +52,7 @@ def start_server():
     import uvicorn
     uvicorn.run(
         app,  # Diretamente o objeto app
-        host="0.0.0.0",
+        host="localhost",
         port=8000,
         workers=1
     )

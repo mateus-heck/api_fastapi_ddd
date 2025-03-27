@@ -23,3 +23,9 @@ class UserService:
             hashed_password=hashed_password
         )
         return self.repository.add(user)
+    
+    def get_user(self, user_id: int) -> User:
+        return self.repository.get_by_id(user_id)
+    
+    def get_users(self) -> list[User]:
+        return self.repository.get_all()

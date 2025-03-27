@@ -15,3 +15,11 @@ class UserRepository(ABC):
     @abstractmethod
     def add(self, user: User) -> User:
         pass
+
+    @abstractmethod
+    def get(self, user_id: int) -> Optional[User]:
+        pass
+
+    @abstractmethod
+    def get_all(self) -> List[User]:
+        pass
